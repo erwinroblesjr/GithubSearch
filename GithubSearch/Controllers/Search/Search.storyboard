@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nws-uc-Emd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="O8z-Eg-0nG">
+            <objects>
+                <viewController id="Nws-uc-Emd" customClass="SearchViewController" customModule="GithubSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RYK-rr-NOj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfP-jC-t0I">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Keywords" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-33-Kcy" userLabel="searchTextField">
+                                        <rect key="frame" x="10" y="10" width="394" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo0-Wr-BlL" userLabel="searchButton">
+                                        <rect key="frame" x="157" y="64" width="100" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Tr3-Kc-HUg"/>
+                                            <constraint firstAttribute="width" constant="100" id="lYV-IC-Z1Q"/>
+                                        </constraints>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onSearchButtonTapped:" destination="Nws-uc-Emd" eventType="touchUpInside" id="kVX-Lb-KRc"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4ee-3i-dh1" userLabel="repositoryTable">
+                                        <rect key="frame" x="10" y="114" width="394" height="684"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2X-lK-Lbh" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="searching"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tis-gz-jp2" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="300" width="414" height="218"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="error"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SqE-R7-aOd">
+                                        <rect key="frame" x="10" y="399" width="394" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="4ee-3i-dh1" secondAttribute="bottom" constant="20" id="0JG-Kt-Tto"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tis-gz-jp2" secondAttribute="trailing" id="8z9-1E-m0P"/>
+                                    <constraint firstItem="wo0-Wr-BlL" firstAttribute="centerX" secondItem="JfP-jC-t0I" secondAttribute="centerX" id="Bbu-Qh-Zq6"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tis-gz-jp2" secondAttribute="bottom" constant="300" id="Cts-nF-xtn"/>
+                                    <constraint firstItem="d8E-33-Kcy" firstAttribute="leading" secondItem="JfP-jC-t0I" secondAttribute="leading" constant="10" id="DDz-Ub-j4o"/>
+                                    <constraint firstAttribute="trailing" secondItem="SqE-R7-aOd" secondAttribute="trailing" constant="10" id="FYL-js-3r9"/>
+                                    <constraint firstAttribute="trailing" secondItem="d8E-33-Kcy" secondAttribute="trailing" constant="10" id="GP8-eo-JHE"/>
+                                    <constraint firstItem="Tis-gz-jp2" firstAttribute="leading" secondItem="JfP-jC-t0I" secondAttribute="leading" id="Kuo-Kf-BhP"/>
+                                    <constraint firstItem="Tis-gz-jp2" firstAttribute="top" secondItem="JfP-jC-t0I" secondAttribute="top" constant="300" id="Oyp-rJ-6X0"/>
+                                    <constraint firstAttribute="trailing" secondItem="J2X-lK-Lbh" secondAttribute="trailing" id="SZV-FH-0Rt"/>
+                                    <constraint firstItem="d8E-33-Kcy" firstAttribute="top" secondItem="JfP-jC-t0I" secondAttribute="top" constant="10" id="Sns-Dk-4pm"/>
+                                    <constraint firstItem="SqE-R7-aOd" firstAttribute="leading" secondItem="JfP-jC-t0I" secondAttribute="leading" constant="10" id="T4R-m7-jRh"/>
+                                    <constraint firstItem="J2X-lK-Lbh" firstAttribute="top" secondItem="JfP-jC-t0I" secondAttribute="top" id="YMP-dX-v8A"/>
+                                    <constraint firstItem="wo0-Wr-BlL" firstAttribute="top" secondItem="d8E-33-Kcy" secondAttribute="bottom" constant="20" id="ZxA-Dy-klu"/>
+                                    <constraint firstItem="J2X-lK-Lbh" firstAttribute="leading" secondItem="JfP-jC-t0I" secondAttribute="leading" id="eto-r0-McP"/>
+                                    <constraint firstItem="4ee-3i-dh1" firstAttribute="leading" secondItem="d8E-33-Kcy" secondAttribute="leading" id="frt-VE-m0M"/>
+                                    <constraint firstItem="4ee-3i-dh1" firstAttribute="trailing" secondItem="d8E-33-Kcy" secondAttribute="trailing" id="jl8-3G-QtT"/>
+                                    <constraint firstItem="4ee-3i-dh1" firstAttribute="top" secondItem="wo0-Wr-BlL" secondAttribute="bottom" constant="20" id="mbN-iG-dVm"/>
+                                    <constraint firstAttribute="bottom" secondItem="J2X-lK-Lbh" secondAttribute="bottom" id="yjM-GJ-oAZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rn1-Uf-F12"/>
+                        <color key="backgroundColor" red="0.054901960784313725" green="0.066666666666666666" blue="0.086274509803921567" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="SqE-R7-aOd" firstAttribute="centerY" secondItem="Rn1-Uf-F12" secondAttribute="centerY" id="5he-9j-VsX"/>
+                            <constraint firstItem="JfP-jC-t0I" firstAttribute="top" secondItem="Rn1-Uf-F12" secondAttribute="top" id="7AL-QW-bcb"/>
+                            <constraint firstItem="Rn1-Uf-F12" firstAttribute="bottom" secondItem="JfP-jC-t0I" secondAttribute="bottom" id="WUm-3d-JVE"/>
+                            <constraint firstItem="Rn1-Uf-F12" firstAttribute="trailing" secondItem="JfP-jC-t0I" secondAttribute="trailing" id="WnT-Bx-ma6"/>
+                            <constraint firstItem="JfP-jC-t0I" firstAttribute="leading" secondItem="Rn1-Uf-F12" secondAttribute="leading" id="ecl-Bs-G7i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="error" destination="Tis-gz-jp2" id="5ys-0N-vEa"/>
+                        <outlet property="noItems" destination="SqE-R7-aOd" id="VQf-zb-gbU"/>
+                        <outlet property="repositoryTable" destination="4ee-3i-dh1" id="FR4-1B-aak"/>
+                        <outlet property="searchButton" destination="wo0-Wr-BlL" id="DA2-QY-rV0"/>
+                        <outlet property="searchField" destination="d8E-33-Kcy" id="hma-2y-vKu"/>
+                        <outlet property="searchFieldTopConstraint" destination="Sns-Dk-4pm" id="jXP-P1-qxl"/>
+                        <outlet property="searching" destination="J2X-lK-Lbh" id="VcT-Tj-Gbn"/>
+                        <segue destination="2bT-bj-S5u" kind="show" identifier="showWebview" id="ZyT-jJ-QVH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gLF-mR-gMj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-459" y="247"/>
+        </scene>
+        <!--WebView-->
+        <scene sceneID="bLV-6P-ajM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WebView" id="2bT-bj-S5u" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="419-Pc-4gs"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7X4-2d-e0T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="207"/>
+        </scene>
+    </scenes>
+</document>
