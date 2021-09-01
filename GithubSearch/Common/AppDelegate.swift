@@ -1,6 +1,5 @@
 //
 //  AppDelegate.swift
-//  GithubSearch
 //
 //  Created by Erwin Robles on 9/1/21.
 //
